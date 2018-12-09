@@ -3,15 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+    var p = document.getElementsByClassName('threen');
+    alert(p.innerHTML);
+    {#p.attr('href') =#}
+    
+</script>
 </head>
 <body>
-hello world
+<ul>
 {% for i in shuju %}
+    <li class="list-group-item">
 
-    <div>{{ i.name }}{{ i.pk }}</div>
-
-
+        <ul class="breadcrumb">
+            <li><a href="#">{{ i.pk }}</a></li>
+            <li><a href="#">{{ i.name }}</a></li>
+            <li><a href="#">{{ i.address }}</a></li>
+            <li><a href="#">{{ i.floor }}</a></li>
+            <li><a href="#">{{ i.finish }}</a></li>
+            <li><a href="#">{{ i.area }}</a></li>
+            <li><a href="#">{{ i.price }}</a></li>
+            <li><a href="#">{{ i.cost }}</a></li>
+            <li><a href="#">{{ i.house_type }}</a></li>
+            <li><a href="#">{{ i.houseinfo }}</a></li>
+            <li><a href={{ i.url  }}>{{ i.url  }}</a></li>
+            <li><a href="#">{{ i.pk }}</a></li>
+        </ul>
+    </li>
 
 {% endfor%}
+</ul>
+<ul class="pagination">
+    <li><a class='left' href="#">&laquo;</a></li>
+    <li><a class='one' href="\house\pg{{ 1 }}">1</a></li>
+    <li><a class='two' href="\house\pg{{ 2 }}">2</a></li>
+    <li><a class='threen' href="\house\pg{{ 3 }}">3</a></li>
+    <li><a href="#">...</a></li>
+    <li><a href="\house\pg{{ page }}">{{ page }}</a></li>
+    <li><a class='right' href="#">&raquo;</a></li>
+</ul>
 </body>
+
 </html>
